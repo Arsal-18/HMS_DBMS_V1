@@ -1,0 +1,39 @@
+﻿@model IEnumerable<HMS_DBMS_V1.Models.tblAppointment>
+
+@{
+    ViewBag.Title = "Appointments";
+}
+
+<h2>Appointments</h2>
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Patient ID</th>
+                <th>Employee ID</th>
+                <th>Schedule ID</th>
+                <th>Appointment Date</th>
+                <th>Appointment Time</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var appointment in Model)
+            {
+                <tr>
+                    <td>@appointment.PatientID</td>
+                    <td>@appointment.EmployeeID</td>
+                    <td>@appointment.ScheduleID</td>
+                    <td>@appointment.AppointmentDate.ToString()</td>
+                    <td>@appointment.AppointmentTime.ToString()</td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = appointment.AppointmentID }, new { @class = "btn btn-info btn-sm" })
+                        @Html.ActionLink("Edit", "Edit", new { id = appointment.AppointmentID }, new { @class = "btn btn-primary btn-sm" })
+                        @Html.ActionLink("Delete", "Delete", new { id = appointment.AppointmentID }, new { @class = "btn btn-danger btn-sm" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

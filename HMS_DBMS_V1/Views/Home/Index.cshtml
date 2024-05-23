@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Welcome";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Welcome</title>
+    <style>
+        .welcome-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .welcome-text {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .button-container {
+            margin-top: 30px;
+        }
+
+            .button-container a {
+                display: inline-block;
+                padding: 10px 20px;
+                margin: 5px;
+                font-size: 16px;
+                color: white;
+                background-color: #007bff;
+                border: none;
+                border-radius: 5px;
+                text-decoration: none;
+            }
+
+                .button-container a:hover {
+                    background-color: #0056b3;
+                }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <div class="welcome-text">Welcome to Hospital Management System</div>
+        <div class="button-container">
+            <a href="@Url.Action("Index", "Employees")">View Employees</a>
+            <a href="@Url.Action("Create", "Employees")">Create New Employee</a>
+            <a href="@Url.Action("Index", "Schedule")">View Schedule</a>
+        </div>
+    </div>
+</body>
+</html>
